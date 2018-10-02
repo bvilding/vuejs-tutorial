@@ -15,9 +15,11 @@
     <div id="vue-app">
         <h1> Keyboard Events </h1>
         <label for="">Name:</label>
-        <input type="text" v-on:keyup.enter="logName" />
+        <input type="text" v-model="name" />
         <label for="">Age:</label>
-        <input type="text" v-on:keyup.alt.enter="logAge" />
+        <input type="text" v-model="age" />
+        <span> {{ name }} </span>
+        <span> {{ age }} </span>
     </div>
     <!-- You can also use '@' as shorthand for 'v-on:' -->
 
