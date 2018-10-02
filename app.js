@@ -1,38 +1,38 @@
-var one = new Vue({
+Vue.component('greeting', {
+    template: '<p>Hey there, I am {{ name }}. <button v-on:click="changeName">Change Name</button></p>',
+    data: function () {
+        return {
+            name: "Vinni"
+        };
+    },
+    methods: {
+        changeName: function () {
+            this.name = "Mario";
+        }
+    }
+});
+
+new Vue({
     el: '#vue-app-one',
-    data: {
-        title: 'Vue App One'
-    },
+
 
     methods: { //You can use this to inject functions to your variables.
 
     },
 
     computed: {
-        greet: function () {
-            return 'Hello from App One';
-        }
+
     },
 }); //Don't forget the comma's inbetween each function.
 
-var two = new Vue({
+new Vue({
     el: '#vue-app-two',
-    data: {
-        title: 'Vue App Two'
-
-    },
 
     methods: { //You can use this to inject functions to your variables.
-        changeTitle: function () {
-            one.title = "Title Changed";
-        }
+
     },
 
     computed: {
-        greet: function () {
-            return 'App Two here!';
-        }
+
     },
 }); //Don't forget the comma's inbetween each function.
-
-two.title = "Changed from Outside";
