@@ -13,15 +13,11 @@
 
 <body>
     <div id="vue-app">
-        <h1> Events </h1>
-        <p>My age is: {{ age }}</p>
-        <button v-on:click.once="add(1)">Add a Year</button>
-        <!--Adding the once modifier makes the button only fire once.-->
-        <button v-on:click="subtract(1)">Subtract a Year</button>
-        <button v-on:dblclick="add(10)">Add 10 Years</button>
-        <button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
-        <div id="canvas" v-on:mousemove="updateXY"> {{ x }}, {{ y }} </div>
-        <a v-on:click.prevent="click" href="https://www.qontact.app">Qontact.app</a>
+        <h1> Keyboard Events </h1>
+        <label for="">Name:</label>
+        <input type="text" v-on:keyup.enter="logName" />
+        <label for="">Age:</label>
+        <input type="text" v-on:keyup.alt.enter="logAge" />
     </div>
     <!-- You can also use '@' as shorthand for 'v-on:' -->
 
