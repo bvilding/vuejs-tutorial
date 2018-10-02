@@ -18,7 +18,7 @@ new Vue({
         // }
     },
 
-    computed: {
+    computed: { //This is a more efficient way to code. It only runs when needed by watching the variables.
         addToA: function () {
             console.log('addToA');
             return this.a + this.age;
