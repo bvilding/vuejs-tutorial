@@ -1,24 +1,18 @@
 <template>
   <!-- Everything must live within one tag -->
-  <div> 
-    <h1> {{ title }} </h1>
-    <ninjas></ninjas>
-  </div>
+    <ul>
+       <li v-for="ninja in ninjas"> {{ ninja }} </li> 
+    </ul>
 </template>
 
 <script>
-import Ninjas from "./Qontact.vue";
-
 export default {
   //This is exporting the object. Similar to how we used components to push the template to the view.
-  components: {
-    //This is how you register a component Locally; or so it lives in one file.
-    ninjas: Ninjas
-  }, //Don't forget the commas.
+  //This is the name of the component.
   data() {
     // This is the function for the component. This is an ES6 function.
     return {
-      title: "Qontact App"
+      ninjas: ["Yoshi", "Mario", "Ryu"]
     };
   }
 };
