@@ -1,31 +1,28 @@
 <template>
-  <!-- Everything must live within one tag -->
-  <div> 
-    <h1> {{ title }} </h1>
+  <div>
+    <app-header></app-header>
     <ninjas></ninjas>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Ninjas from "./Qontact.vue";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Ninjas from "./components/Ninjas.vue";
 
 export default {
-  //This is exporting the object. Similar to how we used components to push the template to the view.
   components: {
-    //This is how you register a component Locally; or so it lives in one file.
-    ninjas: Ninjas
-  }, //Don't forget the commas.
+    "app-header": Header, //Header is already a tag and cannot be used for a component name.
+    "app-footer": Footer, //Footer is already a tag and cannot be used for a component name.
+    ninjas: Ninjas //Don't forget commas
+  },
   data() {
     // This is the function for the component. This is an ES6 function.
-    return {
-      title: "Qontact App"
-    };
+    return {};
   }
 };
 </script>
 
-<style scoped>
-h1 {
-  color: purple;
-}
+<style>
 </style>
