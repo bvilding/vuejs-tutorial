@@ -1,11 +1,16 @@
 <template>
     <footer>
-        <p> {{ copyright }} </p>
+        <p> {{ copyright }} {{ title }} </p>
     </footer>
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      Type: String
+    }
+  },
   data() {
     // This is the function for the component. This is an ES6 function.
     return {
