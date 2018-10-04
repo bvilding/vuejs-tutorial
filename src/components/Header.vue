@@ -20,7 +20,7 @@ export default {
   methods: {
     changeTitle: function() {
       //This threw an error saying to use props instead. It knows it's causing an issue.
-      this.title = "Vue Wizards";
+      this.$emit("changeTitle", "Vue Wizards");
     }
   }
 };
