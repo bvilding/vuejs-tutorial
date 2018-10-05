@@ -27,6 +27,27 @@ export default {
     deleteNinja: function() {
       this.ninjas.pop();
     }
+  },
+  //Lifecycle Hooks. Take a look at the Vue JS documentation for the breakdown of Lifecycle Hook Funcitons.
+  beforeCreate() {
+    alert("beforeCreate");
+  },
+  created() {
+    //Use this as a point to fetch database information.
+    alert("Created");
+  },
+  beforeMount() {
+    alert("beforeMount");
+  },
+  mounted() {
+    //this is when things pop up on the screen.
+    alert("mounted");
+  },
+  beforeUpdate() {
+    alert("beforeUpdate");
+  },
+  updated() {
+    alert("updated");
   }
 };
 </script>
