@@ -7,6 +7,8 @@
 
 
 <script>
+import { bus } from "../main.js";
+
 export default {
   props: {
     title: {
@@ -20,7 +22,9 @@ export default {
   methods: {
     changeTitle: function() {
       //This threw an error saying to use props instead. It knows it's causing an issue.
-      this.$emit("changeTitle", "Vue Wizards");
+      // this.$emit("changeTitle", "Vue Wizards");
+      this.title = "Vue Wizards";
+      bus.$emit("titleChanged", "Vue Wizards");
     }
   }
 };

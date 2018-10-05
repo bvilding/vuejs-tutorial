@@ -5,6 +5,8 @@ import App from './App.vue'
 
 // Vue.component('ninjas', Ninjas); //This is how you register the component globally.
 
+export const bus = new Vue(); //WHAT A BITCH!!! Make sure everything is in order or the document won't read correctly and you'll get and error.
+
 new Vue({ //This is the initial Vue.
   el: '#app',
   render: h => h(App) //Takes the root component 'app.vue' and renders it to the page.
