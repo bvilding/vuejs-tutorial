@@ -1,13 +1,19 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueResource from 'vue-resource'
+import Vue from 'vue';
+import App from './App.vue';
+import VueResource from 'vue-resource';
+import VueRouter from 'vue-router';
+import Routes from './routes';
 
 Vue.use(VueResource);
-
+Vue.use(VueRouter);
 //Filters
 // Vue.filter('to-uppercase', function (value) {
 //   return value.toUpperCase();
 // });
+
+const router = new VueRouter({
+  routes: Routes
+});
 
 Vue.filter('snippet', function (value) {
   return value.slice(0, 100) + "...";
@@ -39,7 +45,8 @@ Vue.directive('theme', {
 
 new Vue({ //This is the initial Vue.
   el: '#app',
-  render: h => h(App) //Takes the root component 'app.vue' and renders it to the page.
+  render: h => h(App),
+  router: router //Takes the root component 'app.vue' and renders it to the page.
 });
 
 //This file controls everything from the start.
