@@ -16,16 +16,20 @@
 				<label for="">Cheese</label>
 				<input type="checkbox" value="cheese" v-model="blog.categories" />
 			</div>
+			<label>Author:</label>
+			<select v-model="blog.author">
+				<option v-for="author in authors">{{ author }}</option>
+			</select>
 		</form>
 		<div id="preview">
 			<h3>Preview Blog</h3>
 			<p>Blog Title: {{ blog.title }} </p>
 			<p>Blog Content: </p>
 			<p> {{ blog.content }}</p>
+			<p> Author: {{ blog.author }} </p>
 			<ul>
 				<li v-for="category in blog.categories"> {{ category }} </li>
 			</ul>
-
 		</div>
   </div>
 </template>
@@ -38,8 +42,10 @@ export default {
         //This takes everything and binds it into a central object.
         title: "",
         content: "",
-        categories: []
-      }
+        categories: [],
+        author: ""
+      },
+      authors: ["The Net Ninja", "The Angular Avenger", "The Vue Vindicator"]
     };
   },
   methods: {}
