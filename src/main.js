@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import Ninjas from './Qontact.vue' //This is how you register a component globally. Inside the Main.js file.
+import VueResource from 'vue-resource'
 
+Vue.use(VueResource);
 
 // Vue.component('ninjas', Ninjas); //This is how you register the component globally.
 
