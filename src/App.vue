@@ -31,4 +31,8 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+a {
+  text-decoration: none;
+  color: #000;
+}
 </style>
