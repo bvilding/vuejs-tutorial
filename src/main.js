@@ -12,7 +12,8 @@ Vue.use(VueRouter);
 // });
 
 const router = new VueRouter({
-  routes: Routes
+  routes: Routes,
+  mode: 'history' //You need to check this mode on your server. It isn't always available, but in our dev server it is. Mine would be Google Cloud or something like that.
 });
 
 Vue.filter('snippet', function (value) {
